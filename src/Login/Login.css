@@ -5,6 +5,8 @@
     column-gap: 20px;
 }
 
-.login__flex{
-    flex-direction: column;
+@media screen and (max-width:760px){
+    .login__flex {
+            flex-direction: column;
+        }
 }
