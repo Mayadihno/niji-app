@@ -1,0 +1,62 @@
+.ads{
+    margin-top: 30px;
+}
+.ads__content{
+    width: 90%;
+    margin: auto;
+}
+.ads__flex{
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+.ads__text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:20px 15px;
+}
+.ads__text img{
+    width: 600px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.ads__text .text h3{
+    font-size: 35px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    text-transform: capitalize;
+    font-style: italic;
+}
+.ads__text .text p{
+    line-height: 34px;
+    width: 85%;
+    margin: auto;
+    padding-bottom: 15px;
+}
+.ads .image{
+    cursor: pointer;
+}
+
+@media screen and (max-width:760px) {
+    .ads__flex{
+        flex-direction: column;
+    }
+    .ads__text{
+        flex-direction: column;
+    }
+    .ads__text .text p{
+        width: 90%;
+    }
+    .ads__content{
+        width: 95%;
+    }
+    .ads__text img{
+        margin-top: 10px;
+    }
+}

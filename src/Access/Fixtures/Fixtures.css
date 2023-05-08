@@ -1,0 +1,44 @@
+
+.card__select{
+    background-color: black !important;
+    color: white !important;
+}
+.card__select h3{
+    padding: 5px 0px;
+}
+.card__select select option{
+    color: black;
+}
+.fixtures__grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 30px;
+    row-gap: 15px;
+}
+.fixtures__content{
+    width: 85%;
+    margin: auto;
+}
+.accordionItem {
+    width: 100%;
+    padding: 2px 5px;
+    border: 1px solid black;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+@media screen and (max-width:760px){
+    .fixtures__content{
+        width: 90%;
+    }
+    .fixtures__grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .fiextures__heading h2{
+        padding: 10px 0px;
+        font-size: 20px !important;
+        font-style: italic;
+    }
+}

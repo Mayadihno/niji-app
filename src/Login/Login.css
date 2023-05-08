@@ -1,0 +1,10 @@
+.login__flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    column-gap: 20px;
+}
+
+.login__flex{
+    flex-direction: column;
+}

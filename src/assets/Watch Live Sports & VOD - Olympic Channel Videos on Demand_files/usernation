@@ -1,0 +1,1 @@
+(function() { window.deltatre = window.deltatre || {}; window.deltatre.userNation = "NG"; })()

@@ -1,0 +1,27 @@
+.admin__content{
+    width: 85%;
+  margin: auto;
+}
+.admin__content .button{
+    display: flex;
+    align-items: center;
+   column-gap: 40px;
+   margin: 30px 0px;
+   justify-content: center;
+}
+.admin__flex{
+    width: 50%;
+    margin: auto;
+}
+
+@media screen and (max-width:760px) {
+  .admin__flex{
+    width: 100%;
+  }
+  .admin__content{
+    width: 95%;
+  }
+  .admin__content .button{
+    column-gap: 10px;
+  }
+}

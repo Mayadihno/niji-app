@@ -1,0 +1,105 @@
+.backgroundImage{
+   background-image:url('https://img.olympicchannel.com/images/image/private/t_s_pog_overview_hero_xl/f_auto/primary/ufiinqivfn8ig30anqpe');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center bottom;
+   height: 60vh;
+   position: relative;
+  
+}
+.back__text{
+    position: absolute;
+    top: 20%;
+    left: 30px;
+    color: white;
+}
+.back__text .date{
+    font-size: 23px;
+    padding: 15px 0px;
+}
+.back__text h3{
+    font-size: 50px;
+    font-weight: 700;
+}
+.features__card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+.features__content {
+    width: 90%;
+    margin: auto;
+}
+
+.features__headings {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+.headCapital{
+    text-transform: lowercase;
+}
+.features__text h3{
+    font-size: 30px;
+    padding: 15px 0px;
+    font-weight: 700;
+    font-style: italic;
+}
+.features__headings h1 {
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.card__bg{
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+.features__headings h6 {
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.features__card-head {
+    margin-bottom: 10px;
+}
+
+.features__card-head h3 {
+    font-size: 20px;
+}
+
+.card__bg {
+    background-color: #2D3748;
+}
+
+@media screen and (max-width:760px) {
+    .features__headings {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .features__headings h1 {
+        font-size: 30px;
+        padding-bottom: 10px;
+    }
+
+    .features__headings h6 {
+        margin-left: 10px;
+    }
+
+    .features__card {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .backgroundImage{
+        height: 40vh;
+    }
+}

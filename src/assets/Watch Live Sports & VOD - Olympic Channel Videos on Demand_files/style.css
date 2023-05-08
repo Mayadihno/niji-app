@@ -1,0 +1,277 @@
+@charset "UTF-8";
+/* CSS Document */
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body,
+body * {
+	position: absolute;
+	vertical-align: baseline;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+}
+
+#main_wrapper {
+	position: absolute;
+	display: block;
+	width: 728px;
+	height: 90px;
+	overflow: hidden;
+	background-color: #fff;
+	opacity: 0;
+	border: 1px solid #ccc;
+}
+
+.active#main_wrapper {
+	opacity: 1;
+}
+#heroWrapper {
+	width: 728px;
+	height: 90px;
+}
+
+#hero {
+    top: 0px;
+    left: 450px;
+    position: absolute;
+	background: url('img/hero.jpg');
+	background-size: 257px 90px;
+	width: 257px;
+	height: 90px;
+}
+
+#logo_left_part {
+    top: 8px;
+    left: 8px;
+	background: url('img/copy.png') no-repeat -8px -8px;
+	background-size: 728px 90px;
+	width: 37px;
+	height: 18px;
+}
+#logo_left_tick {
+    top: 8px;
+    left: 47px;
+	background: url('img/copy.png') no-repeat -47px -8px;
+	background-size: 728px 90px;
+	width: 2px;
+	height: 18px;
+}
+#logo_middle {
+    top: 8px;
+    left: 51px;
+	background: url('img/copy.png') no-repeat -51px -8px;
+	background-size: 728px 90px;
+	width: 60px;
+	height: 17px;
+}
+#logo_right_tick {
+    top: 8px;
+    left: 114px;
+	background: url('img/copy.png') no-repeat -114px -8px;
+	background-size: 728px 90px;
+	width: 2px;
+	height: 18px;
+}
+#logo_right_part {
+    top: 8px;
+    left: 118px;
+	background: url('img/copy.png') no-repeat -118px -8px;
+	background-size: 728px 90px;
+	width: 26px;
+	height: 18px;
+}
+#logo_description_1 {
+    top: 28px;
+    left: 30px;
+	background: url('img/copy.png') no-repeat -30px -28px;
+	background-size: 728px 90px;
+	width: 91px;
+	height: 6px;
+}
+#logo_description_2 {
+    top: 35px;
+    left: 53px;
+	background: url('img/copy.png') no-repeat -53px -35px;
+	background-size: 728px 90px;
+	width: 45px;
+	height: 5px;
+}
+
+#whiteFrame{
+    position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+    z-index: 1000;
+}
+
+#hero_copy1 {
+    left: 457px;
+    top: 64px;
+	background: url('img/copy.png') no-repeat -457px -64px;
+	background-size: 728px 90px;
+	width: 78px;
+	height: 8px;
+}
+#hero_copy2 {
+    left: 458px;
+    top: 76px;
+	background: url('img/copy.png') no-repeat -458px -76px;
+	background-size: 728px 90px;
+	width: 94px;
+	height: 8px;
+}
+#copy1 {
+    left: 198px;
+    top: 16px;
+	background: url('img/copy.png') no-repeat -198px -16px;
+	background-size: 728px 90px;
+	width: 173px;
+	height: 22px;
+}
+#copy2 {
+    left: 236px;
+    top: 36px;
+	background: url('img/copy.png') no-repeat -236px -36px;
+	background-size: 728px 90px;
+	width: 164px;
+	height: 25px;
+}
+
+
+/*////////////////////////////////////////////////////// CTA //////////////////////////////////////////////////////////////*/
+
+#CTA_copy {
+    left: 370px;
+    top: 70px;
+	background: url('img/copy.png') no-repeat -370px -70px;
+	background-size: 728px 90px;
+	width: 70px;
+	height: 12px;
+}
+#CTA_arrow {
+    left: 355px;
+    top: 72px;
+	background: url('img/copy.png') no-repeat -355px -72px;
+	background-size: 728px 90px;
+	width: 13px;
+	height: 10px;
+}
+
+/*////////////////////////////////////////////////////// CTA //////////////////////////////////////////////////////////////*/
+#confetti {
+    opacity: 0;
+}
+
+#con1 {
+    left: 20px;
+    top: 58px;
+	background: url('img/confetti.png') no-repeat -20px -58px;
+	background-size: 728px 90px;
+	width: 16px;
+	height: 16px;
+}
+#con2 {
+    left:78px;
+    top: 47px;
+	background: url('img/confetti.png') no-repeat -78px -47px;
+	background-size: 728px 90px;
+	width: 16px;
+	height: 16px;
+}
+#con3 {
+    left: 87px;
+    top: 73px;
+	background: url('img/confetti.png') no-repeat -87px -73px;
+	background-size: 728px 90px;
+	width: 16px;
+	height: 16px;
+}
+#con4 {
+    left: 133px;
+    top: 56px;
+	background: url('img/confetti.png') no-repeat -133px -56px;
+	background-size: 728px 90px;
+	width: 16px;
+	height: 16px;
+}
+#con5 {
+    left: 193px;
+    top: 67px;
+	background: url('img/confetti.png') no-repeat -193px -67px;
+	background-size: 728px 90px;
+	width: 16px;
+	height:16px;
+}
+#con6 {
+    left: 592px;
+    top: 4px;
+	background: url('img/confetti.png') no-repeat -592px -4px;
+	background-size: 728px 90px;
+	width: 16px;
+	height: 16px;
+}
+#con7 {
+    left: 523px;
+    top: 69px;
+	background: url('img/confetti.png') no-repeat -523px -69px;
+	background-size: 728px 90px;
+	width: 16px;
+	height: 16px;
+}
+#con8 {
+    left: 709px;
+    top:2px;
+	background: url('img/confetti.png') no-repeat -709px -2px;
+	background-size: 728px 90px;
+	width: 16px;
+	height: 16px;
+}
+#con9 {
+    left: 688px;
+    top: 47px;
+	background: url('img/confetti.png') no-repeat -688px -47px;
+	background-size: 728px 90px;
+	width: 16px;
+	height: 16px;
+}
+#con10 {
+    left: 712px;
+    top: 73px;
+	background: url('img/confetti.png') no-repeat -712px -73px;
+	background-size: 728px 90px;
+	width: 16px;
+	height: 16px;
+}
+#con11 {
+    left: 29px;
+    top: 230px;
+	background: url('img/confetti.png') no-repeat -29px -230px;
+	background-size: 728px 90px;
+	width: 13px;
+	height: 13px;
+}
+#con12 {
+    left: 182px;
+    top: 242px;
+	background: url('img/confetti.png') no-repeat -174px -235px;
+	background-size: 728px 90px;
+	width: 12px;
+	height: 12px;
+}
+#con13 {
+    left: 290px;
+    top: 240px;
+	background: url('img/confetti.png') no-repeat -281px -235px;
+	background-size: 728px 90px;
+	width: 12px;
+	height: 12px;
+}

@@ -1,0 +1,134 @@
+var creative = {};
+var main_tl;
+var videoPlaying = false;
+var myTimeout;
+
+function EnablerCheck () {
+    console.log ('--------------------------- | ENABLER CHECK');
+    if (Enabler.isInitialized()) {
+      init();
+    } else {
+      Enabler.addEventListener(studio.events.StudioEvent.INIT, init);
+    }
+}
+
+function init(){
+  console.log('--------------------------- | ENABLER INITIALIZED');
+  if (Enabler.isPageLoaded()) {
+    onPageLoaded();
+  } else {
+    Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, onPageLoaded);
+  }
+}
+
+function onPageLoaded () {
+  console.log("--------------------------- | PAGE LOADED");
+  politeInit();
+}
+
+function politeInit() {
+  console.log("--------------------------- | POLITE LOAD");
+  preload = new createjs.LoadQueue(true);
+  manifest = [
+
+    {src:Enabler.getUrl('logos.svg'), id:"logos"},
+    {src:Enabler.getUrl('OpenSans-Bold.woff'), id:"OpenSans-Bold"},
+    {src:Enabler.getUrl('OpenSans-Regular.woff'), id:"OpenSans-Regular"},
+  ];
+
+  preload.addEventListener("complete", handleManifastLoadComplete);
+  preload.addEventListener("fileload", handleFileLoaded);
+  preload.addEventListener("error", handlePrelodError);
+  preload.loadManifest(manifest);
+}
+
+function handlePrelodError(event) {
+  console.log("--------------------------- | FILE LOAD ERROR");
+}
+
+function handleFileLoaded(event) {
+  var item = event.item;
+  var id = item.id;
+  var result = event.result;
+  console.log("--------------------------- | LOADED : " + id);
+}
+
+function handleManifastLoadComplete(event) {
+  console.log("--------------------------- | LOAD MANIFEST COMPLETE");
+  setUp();
+}
+
+function setUp () {
+  console.log('--------------------------- | ROOT SETUP');
+  setupDomElements ();
+  CreateAnimations ();
+  addListeners();
+  assignVideo ();
+  //Play ();
+}
+
+function setupDomElements () {
+  console.log('--------------------------- | SETUP DOM');
+  creative.dom = {};
+  creative.dom.mainContainer = document.getElementById('main-container');
+  creative.dom.exit = document.getElementById('exit');
+  creative.dom.video_1 = document.getElementById('video_1');
+  gsap.set([headline, bodycopy, cta, logos], {rotationZ: 0.001})
+
+}
+
+function CreateAnimations () {
+  console.log('--------------------------- | CREATE ANIMATIONS');
+    var Headline_SplitText = new SplitText(headline, {type:"lines"});
+    main_tl = new TimelineMax({paused:true, repeat:0});
+    main_tl.timeScale(1);
+    main_tl.fromTo(Headline_SplitText.lines,  {opacity:0}, {delay:0.5, duration:1, opacity:1, stagger:0.5, ease: "power1.out"})
+    main_tl.to(Headline_SplitText.lines,  {delay:2, duration:0.2, opacity:0, y:0, stagger:0.05, ease: "power1.in"})
+    main_tl.fromTo([bodycopy,cta, logos],  {opacity:0}, {delay:1.5, duration:1, opacity:1, stagger:0, ease: "power1.out"})
+    main_tl.addLabel("END")
+}
+
+function addListeners() {
+  creative.dom.exit.addEventListener('click', exitClickHandler);
+  creative.dom.video_1.addEventListener('loadedmetadata', videoCanPlayHandler, false);
+}
+
+function videoCanPlayHandler(e) {
+  console.log('--------------------------- | VIDEO CAN PLAY');
+  creative.dom.video_1.removeEventListener('canplay', videoCanPlayHandler, false);
+  Play ();
+}
+
+function assignVideo () {
+  console.log("--------------------------- | ASSIGN VIDEO")
+  Enabler.loadModule(studio.module.ModuleId.VIDEO, function() {
+    console.log("--------------------------- | ADDING VIDEO TRACKING")
+    studio.video.Reporter.attach('Video Report 1', creative.dom.video_1);
+  }.bind(this));
+  creative.dom.video_1.src = Enabler.getUrl('video.mp4');
+}
+
+function Play () {
+	console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> | PLAY ╭∩╮(-_-)╭∩╮")
+  main_tl.play(0);
+  //playVideo ();
+  myTimeout = setTimeout(playVideo, 2000);
+  creative.dom.mainContainer.style.visibility = "visible";
+}
+
+function playVideo () {
+  console.log('--------------------------- | START VIDEO');
+  videoPlaying = true;
+  creative.dom.video_1.currentTime = 0;
+  creative.dom.video_1.play();
+}
+
+function exitClickHandler() {
+    Enabler.exit('click');
+clearTimeout(myTimeout)
+    main_tl.pause("END")
+    creative.dom.video_1.currentTime = 9.5;
+    creative.dom.video_1.pause();
+}
+
+EnablerCheck () ;

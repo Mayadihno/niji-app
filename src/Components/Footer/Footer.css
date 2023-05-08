@@ -1,0 +1,34 @@
+.footer{
+    background-color: black;
+    margin-top: 30px;
+}
+.footer__content{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+.games__partner{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    column-gap: 10px;
+    width: 70%;
+    margin: auto;
+}
+.games__partner img{
+    width: 60px;
+    height: 50px;
+    padding-bottom: 14px;
+}
+.footer h2{
+    font-size: 25px;
+    padding: 15px 0px;
+    color: white;
+    font-style: italic;
+    font-weight: 600;
+}
+.footer__logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,116 @@
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+.swiper {
+    width: 100%;
+    height: 85vh;
+
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+    height: 600px;
+    width: 100vw;
+    overflow: hidden;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 85vh;
+    object-fit: cover;
+    filter: brightness(50%);
+    -webkit-filter: brightness(50%);
+}
+
+.swiper-slide .items .text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.swiper-slide .items .text h5 {
+    color: white;
+    margin-top: 15px;
+    font-size: 20px;
+
+}
+
+.spanButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.swiper-slide .items .text h2 {
+    color: white;
+    font-size: 40px;
+    font-style: italic;
+    padding-bottom: 10px;
+    font-weight: 800;
+    text-transform: capitalize;
+    line-height: 50px;
+
+}
+
+.banner {
+    border-top: 1px solid #fff;
+}
+
+@media screen and (max-width:550px) {
+    .swiper {
+        height: 60vh;
+    }
+
+    .swiper-slide .items .text {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+    }
+
+    .swiper-slide .items .text h2 {
+        font-size: 30px;
+
+    }
+
+    .swiper-slide .items .text h5 {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width:860px) {
+    .swiper-slide .items .text h2 {
+        font-size: 32px;
+        font-weight: 700;
+    }
+}

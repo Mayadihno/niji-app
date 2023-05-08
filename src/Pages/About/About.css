@@ -1,0 +1,17 @@
+
+.about__content{
+    width: 70%;
+    margin: auto;
+}
+.about__head{
+    margin-top: 40px;
+}
+.anout__texts p{
+    line-height: 40px;
+    font-size: 20px;
+}
+@media screen and (max-width:760px) {
+    .about__content{
+        width: 95%;
+    }
+}

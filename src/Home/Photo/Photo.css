@@ -1,0 +1,42 @@
+.photo{
+    margin-top: 30px;
+}
+.photo__content{
+    width: 85%;
+    margin: auto;
+}
+.photo__heading{
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+.photo__heading span{
+    font-size: 30px;
+    font-weight: 500;
+    font-style: italic;
+}
+.photo__heading h3{
+    display:block;
+    font-size: 45px;
+    font-weight: 800;
+}
+.photo__grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 20px;
+}
+
+.photo__flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+@media screen and (max-width:760px) {
+    .photo__grid{
+        grid-template-columns: repeat(1,1fr);
+        row-gap: 10px;
+    }
+    .photo__content{
+        width: 95%;
+    }
+}

@@ -1,0 +1,50 @@
+.gallery__card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.gallery__card img {
+    width: 500px;
+}
+
+.cardPost img {
+    height: 300px;
+    object-fit: fill;
+    min-width: 100% !important;
+    object-position: 50% 40%;
+
+}
+
+.cardPost h3 {
+    text-transform: capitalize;
+    padding-bottom: 5px;
+    font-size: 14px;
+}
+
+.cardPost p {
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.gallerys {
+    width: 90%;
+    margin: auto;
+    color: black;
+}
+
+.gallery h3 {
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+@media screen and (max-width: 760px) {
+    .gallery__card {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+}

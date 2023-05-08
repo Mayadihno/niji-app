@@ -1,0 +1,61 @@
+var allianz = new TimelineMax;
+var i = 0;
+var rot = 0;
+
+
+function init() { 
+    main_animation();
+}
+
+function main_animation (){
+    
+    allianz.to([hero_copy1, hero_copy2, con1, con2, con3, con4, con5, con6, con7, con8, con9, con10], 0.01, { force3D: true, backfaceVisibility: 'hidden', rotationZ: '0.01deg', z: 0.01 }, "pre_start");
+    
+    allianz.to (whiteFrame, 1, {delay:0.1, opacity:0, ease:Power1.easeInOut}, "part1");
+
+//    allianz.from (hero, 2.5, {delay:0, scale:1.1, ease:Power1.easeInOut}, "part1");
+    allianz.from (hero_copy1, 1, {delay:1, opacity:0, ease:Power1.easeInOut}, "part1");
+    allianz.from (hero_copy2, 1, {delay:1.5, opacity:0, ease:Power1.easeInOut}, "part1");
+
+    allianz.to (whiteFrame, 1, {delay:0.1, opacity:0, ease:Power1.easeInOut}, "part1");
+    
+    gsap.delayedCall(4, confetti_launch);
+    
+    allianz.from (hero, 1.5, {delay:3, scale:3.5, y:10, x:70, transformOrigin:"100% 50%", ease:Power1.easeInOut }, "part1");
+    allianz.from ([hero_copy1, hero_copy2], 1.5, {delay:3, x:-450, transformOrigin:"100% 50%", ease:Power1.easeInOut}, "part1");
+
+    allianz.from (logo_middle, 1, {delay:4.5, opacity:0, ease:Power2.easeInOut}, "part1");
+    allianz.from ([logo_left_tick, logo_right_tick], .5, {delay:5, scaleY:0, ease:Power2.easeInOut}, "part1");
+    allianz.from (logo_description_1, .25, {delay:5.3, y:5, opacity:0, ease:Power2.easeInOut}, "part1");
+    allianz.from (logo_description_2, .25, {delay:5.4, y:5, opacity:0, ease:Power2.easeInOut}, "part1");
+    allianz.from (logo_left_part, .75, {delay:5, x:5, opacity:0, ease:Power2.easeInOut}, "part1");
+    allianz.from (logo_right_part, .75, {delay:5, x:-5, opacity:0, ease:Power2.easeInOut}, "part1");
+
+    allianz.from (copy1, 3, {delay:4.5, opacity:0, x:20, ease:Power2.easeInOut}, "part1");
+    allianz.from (copy2, 3, {delay:4.5, opacity:0, x:-20, ease:Power2.easeInOut}, "part1");
+    
+    allianz.from ([CTA_copy, CTA_arrow], 1, {delay:8, opacity:0, ease:Power1.easeInOut}, "part1");
+
+    allianz.to (CTA_arrow, .25, {delay:9, x:-5, yoyo:true, repeat:7, ease:Power1.easeOut, onComplete:add_hover()}, "part1");
+
+//    allianz.pause(1);
+}
+
+function add_hover() {
+    document.getElementById("main_wrapper").onmouseover = function(){
+    TweenMax.to(CTA_arrow, .5, {x:-5, ease: Power2.easeInOut, overwrite:"auto"});
+};
+
+    document.getElementById("main_wrapper").onmouseout = function(){
+    TweenMax.to(CTA_arrow, .25, {x:0, ease: Power2.easeInOut, overwrite:"auto"});
+};
+}
+
+function confetti_launch() {
+    document.getElementById('confetti').style.opacity = 1;
+    
+    for (i = 1; i < 11; i++) {
+
+        TweenMax.from('#con' + i , .75, {delay:Math.random(), autoAlpha:0, left:728, top:25, rotation:Math.random(50), ease: Power2.easeOut});
+    }
+}
