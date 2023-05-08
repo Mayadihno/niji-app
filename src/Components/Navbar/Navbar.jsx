@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
+import { FaFootballBall } from "react-icons/fa";
+import { MdOutlineSportsHockey } from "react-icons/md";
 import Manubar from "./Manubar";
 import "./Navbar.css";
 
@@ -35,14 +36,14 @@ const Navbar = () => {
           onClick={() => setToggle(!toggle)}
         >
           {toggle ? (
-            <RiCloseLine
-              size={30}
+            <MdOutlineSportsHockey
+              size={35}
               color="black"
               onClick={() => setToggle(false)}
             />
           ) : (
-            <RiMenu3Line
-              size={30}
+            <FaFootballBall
+              size={35}
               color="black"
               onClick={() => setToggle(true)}
             />

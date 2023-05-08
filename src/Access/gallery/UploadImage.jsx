@@ -83,7 +83,7 @@ const UploadImage = () => {
           <div className="streamer">
             {!loading ? (
               <Card maxW="md" className="card__bg">
-                <CardHeader>Upload Event Image</CardHeader>
+                <CardHeader>Post Image of the day</CardHeader>
                 <CardBody>
                   <form onSubmit={handleSubmit}>
                     <div>
@@ -96,23 +96,23 @@ const UploadImage = () => {
                         sx={{ padding: "5px", cursor: "pointer" }}
                       />
                       <div className="textarea" style={{ paddingTop: "20px" }}>
-                        <h3>Enter Image description</h3>
+                        <h3>Say somwthing about the image</h3>
                         <Textarea onChange={handleChange} name="imageDesc" />
                       </div>
                     </div>
                     <Button
                       type="submit"
-                      colorScheme="blue"
+                      colorScheme="whatsapp"
                       mr={3}
                       sx={{ mt: "15px" }}
                     >
-                      Upload
+                      Post Image
                     </Button>
                   </form>
                 </CardBody>
               </Card>
             ) : (
-              <Spinner msg={"Image Uploading do not Refresh Page"} />
+              <Spinner msg={"Image Uploading do not Refresh this Page"} />
             )}
           </div>
         </div>

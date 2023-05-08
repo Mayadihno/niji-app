@@ -14,7 +14,7 @@ import data from "../../Pages/Features/featureData";
 import { db } from "../../Firebase/firebaseConfig";
 import "./Fixtures.css";
 const FixturesUpload = () => {
-  const [category, setCategory] = useState("Choose Sport Category");
+  const [category, setCategory] = useState("Choose Sport");
   const [fixtures, setFixtures] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -43,8 +43,8 @@ const FixturesUpload = () => {
         <div className="result">
           <Card maxW="md" className="card__select">
             <CardBody>
-              <h3>Upload Today Fixtures</h3>
-              <p>Choose sport category</p>
+              <h3>Upload Fixtures</h3>
+              <p style={{ paddingBottom: "5px" }}>Choose Sport</p>
               <form onSubmit={handleSubmit}>
                 <Select placeholder={category} onChange={handleChange} required>
                   {data &&
@@ -62,7 +62,7 @@ const FixturesUpload = () => {
                 </Select>
 
                 <Textarea
-                  placeholder="Enter Sport Fixtures"
+                  placeholder="Enter Match of the day"
                   mt={"20px"}
                   required
                   value={fixtures}
@@ -86,8 +86,12 @@ const FixturesUpload = () => {
                         Uploading Fixtures...
                       </Button>
                     ) : (
-                      <Button type="submit" colorScheme="teal" variant="solid">
-                        <span>Upload Fixtures</span>
+                      <Button
+                        type="submit"
+                        colorScheme="whatsapp"
+                        variant="solid"
+                      >
+                        <span>Post matches</span>
                       </Button>
                     )}
                   </Stack>

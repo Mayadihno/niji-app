@@ -15,6 +15,9 @@
     object-position: 50% 40%;
 
 }
+.upload .card__bg{
+    background-color: black !important;
+}
 
 .cardPost h3 {
     text-transform: capitalize;

@@ -83,8 +83,8 @@ const UploadVideo = () => {
       <div className="modal">
         <div className="streamer">
           {!loading ? (
-            <Card maxW="md" className="card__bg">
-              <CardHeader>Upload Event Videos</CardHeader>
+            <Card maxW="md" className="card__bgs">
+              <CardHeader>Upload Highlights</CardHeader>
               <CardBody>
                 <form onSubmit={handleSubmit}>
                   <div>
@@ -97,17 +97,17 @@ const UploadVideo = () => {
                       sx={{ padding: "5px", cursor: "pointer" }}
                     />
                     <div className="textarea" style={{ paddingTop: "20px" }}>
-                      <h3>Enter Video description</h3>
+                      <h3>Say something about this Highlight</h3>
                       <Textarea onChange={handleChange} name="videoDesc" />
                     </div>
                   </div>
                   <Button
                     type="submit"
-                    colorScheme="blue"
+                    colorScheme="whatsapp"
                     mr={3}
                     sx={{ mt: "15px" }}
                   >
-                    Upload
+                    Post Highlight
                   </Button>
                 </form>
               </CardBody>

@@ -17,6 +17,10 @@
     padding: 20px 0px;
     font-weight: 600;
 }
+.card__bgs{
+    background-color: black !important;
+    color: white !important;
+}
 
 @media screen and (max-width:760px) {
     .videoGrid {
