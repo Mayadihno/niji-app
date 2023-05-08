@@ -51,15 +51,14 @@ const Manubar = () => {
           >
             About Event
           </NavLink>
-          <div className="sign-button">
-            <Button
-              color={"twitter"}
-              variant={"outline"}
-              onClick={() => navigate("/login")}
-            >
-              Login
-            </Button>
-          </div>
+
+          <Button
+            color={"twitter"}
+            variant={"outline"}
+            onClick={() => navigate("/login")}
+          >
+            Login
+          </Button>
         </>
       )}
       {pageState && (
@@ -90,15 +89,14 @@ const Manubar = () => {
               Admin Dashboard
             </NavLink>
           )}
-          <div className="sign-button">
-            <Button
-              variant={"outline"}
-              colorScheme="blackAlpha"
-              onClick={handleClick}
-            >
-              Sign Out
-            </Button>
-          </div>
+
+          <Button
+            variant={"outline"}
+            colorScheme="blackAlpha"
+            onClick={handleClick}
+          >
+            Sign Out
+          </Button>
         </>
       )}
     </>

@@ -111,7 +111,7 @@
    .active-links{
     background-color: transparent !important;
    }
-   .sign-button button{
+   .navbar__links button{
     color: white;
    }
     .navbar__rights {
