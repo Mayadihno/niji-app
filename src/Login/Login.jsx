@@ -7,6 +7,13 @@ const Login = () => {
   const [show, setShow] = useState(true);
   return (
     <React.Fragment>
+      <div className="backgroundImage"></div>
+      <div className="back__text">
+        <div className="date">May 12th-May 25th 2023</div>
+        <h3>
+          Tokyo <br /> Olympic 2023
+        </h3>
+      </div>
       <div className="login">
         <div className="login__content">
           <div className="login__flex">

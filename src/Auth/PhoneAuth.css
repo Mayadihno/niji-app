@@ -9,6 +9,11 @@
     align-items: center;
     justify-content: center;
 }
+.show{
+    margin: 30px 0px;
+    display: flex;
+    justify-content: start;
+}
 
 .phone .card-otp {
     width: 600px;
