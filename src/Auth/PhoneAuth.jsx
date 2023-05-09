@@ -1,5 +1,6 @@
-import { Button, ButtonSpinner, Card, CardBody, Stack } from "@chakra-ui/react";
-import { BsFillShieldLockFill, BsTelephoneFill } from "react-icons/bs";
+import { Button, Card, CardBody, Stack } from "@chakra-ui/react";
+import { BsFillShieldLockFill } from "react-icons/bs";
+import { FcSmartphoneTablet } from "react-icons/fc";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import OtpInput from "otp-input-react";
@@ -23,7 +24,7 @@ const PhoneAuth = () => {
       window.recaptchaVerifier = new RecaptchaVerifier(
         "recaptcha-container",
         {
-          size: "normal",
+          size: "invisible",
           callback: (response) => {
             onSignup();
           },
@@ -85,21 +86,17 @@ const PhoneAuth = () => {
             {!showOTP ? (
               <Card maxW="md" className="card-otp card__bg">
                 <CardBody>
-                  <h3>
-                    <b> Welcome</b> <br /> Sign In with phone Number
-                  </h3>
+                  <h3>Sign In with phone Number</h3>
                   <div className="icons">
                     <i>
-                      <BsTelephoneFill size={30} />
+                      <FcSmartphoneTablet size={30} />
                     </i>
                   </div>
-                  <p>Enter Your Phone Number Here</p>
-                  {/* 7774614335 */}
                   <div className="phone__input">
                     <PhoneInput
-                      country="ng"
+                      country="gb"
                       enableAreaCodes={true}
-                      onlyCountries={["ng"]}
+                      onlyCountries={["gb"]}
                       preserveOrder={["onlyCountries", "preferredCountries"]}
                       value={phoneNumber}
                       onChange={setPhoneNumber}
@@ -125,10 +122,10 @@ const PhoneAuth = () => {
                       ) : (
                         <Button
                           onClick={onSignup}
-                          colorScheme="teal"
-                          variant="outline"
+                          colorScheme="whatsapp"
+                          variant="solid"
                         >
-                          <span>Send code via SMS</span>
+                          <span>Recieve code via SMS</span>
                         </Button>
                       )}
                     </Stack>

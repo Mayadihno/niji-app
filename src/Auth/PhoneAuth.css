@@ -9,6 +9,9 @@
     align-items: center;
     justify-content: center;
 }
+.phone__content .card__bg {
+    background-color: black !important;
+}
 .show{
     margin: 30px 0px;
     display: flex;
