@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
-import { Button, Input } from "@chakra-ui/react";
+import { Button, Input, Select } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./SignUp.css";
@@ -11,7 +11,11 @@ import { toast } from "react-toastify";
 
 const SignUp = ({ show, setShow }) => {
   const [change, setChange] = useState("");
+  const [gender, setGender] = useState("");
 
+  const handleChanges = (e) => {
+    setGender(e.target.value);
+  };
   const handleChange = (e) => {
     const newInput = { [e.target.name]: e.target.value };
     setChange({ ...change, ...newInput });
@@ -20,7 +24,6 @@ const SignUp = ({ show, setShow }) => {
   const { password, fullname, email, phoneNumber, confirm } = change;
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       if (password !== confirm) {
         toast.warning("password and confrim password are not corrrect");
@@ -33,7 +36,7 @@ const SignUp = ({ show, setShow }) => {
       });
 
       const usersData = users.user;
-      const formDataCopy = { ...change };
+      const formDataCopy = { ...change, gender: gender };
       delete formDataCopy.password;
       delete formDataCopy.confirm;
       formDataCopy.timestamp = serverTimestamp();
@@ -63,10 +66,10 @@ const SignUp = ({ show, setShow }) => {
             <h2>Create Account as local user</h2>
             <form onSubmit={handleSubmit}>
               <div className="name">
-                <label htmlFor="name">Fullname</label>
+                <label htmlFor="name">Username</label>
                 <Input
                   type="text"
-                  placeholder="Enter fullname"
+                  placeholder="Enter Username"
                   id="name"
                   size="md"
                   name="fullname"
@@ -101,6 +104,32 @@ const SignUp = ({ show, setShow }) => {
                   variant="outline"
                 />
               </div>
+              <Select
+                placeholder={"Select gender"}
+                onChange={handleChanges}
+                required
+                name="gender"
+              >
+                <option style={{ color: "black" }} value={"male"}>
+                  Male
+                </option>
+                <option style={{ color: "black" }} value={"female"}>
+                  Female
+                </option>
+              </Select>
+              <div className="phones">
+                <label htmlFor="country">Country</label>
+                <Input
+                  type="text"
+                  placeholder="Enter country"
+                  id="country"
+                  size="md"
+                  name="country"
+                  required
+                  onChange={handleChange}
+                  variant="outline"
+                />
+              </div>
               <div className="password">
                 <label htmlFor="password">Password</label>
                 <Input
@@ -126,6 +155,10 @@ const SignUp = ({ show, setShow }) => {
                   onChange={handleChange}
                   variant="outline"
                 />
+              </div>
+              <div className="privacy">
+                <input type="checkbox" style={{ marginRight: "10px" }} /> I
+                accept the terms and privacy policy
               </div>
               <Button type="submit" variant={"solid"} colorScheme="blackAlpha">
                 Sign Up

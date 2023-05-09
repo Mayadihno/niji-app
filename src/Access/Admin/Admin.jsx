@@ -4,9 +4,9 @@ import UploadImage from "../gallery/UploadImage";
 import UploadVideo from "../video/UploadVideo";
 import "./Admin.css";
 import { Button } from "@chakra-ui/react";
-// import Users from "./Users";
+import Users from "./Users";
 const Admin = () => {
-  const [fixtures, setFixtures] = useState(true);
+  const [fixtures, setFixtures] = useState(false);
   const [images, setImages] = useState(false);
   const [video, setVideo] = useState(false);
 
@@ -65,9 +65,9 @@ const Admin = () => {
               </div>
             )}
           </div>
-          {/* <div className="users">
+          <div className="users">
             <Users />
-          </div> */}
+          </div>
         </div>
       </div>
     </React.Fragment>

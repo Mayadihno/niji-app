@@ -1,4 +1,4 @@
-import { Button, Card, CardBody, Stack } from "@chakra-ui/react";
+import { Button, ButtonSpinner, Card, CardBody, Stack } from "@chakra-ui/react";
 import { BsFillShieldLockFill, BsTelephoneFill } from "react-icons/bs";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -16,7 +16,6 @@ const PhoneAuth = () => {
   const [otp, setOtp] = useState("");
   const [user, setUser] = useState(null);
   const [showOTP, setShowOTP] = useState(false);
-  const [show, setShow] = useState(false);
   const navigate = useNavigate();
 
   const onCaptchVerify = () => {
@@ -79,34 +78,84 @@ const PhoneAuth = () => {
 
   return (
     <React.Fragment>
-      <div className="show">
-        <Button onClick={() => setShow(!show)}>Login as Local user</Button>
-      </div>
-      {show && (
-        <div className="phone">
-          <div id="recaptcha-container" className="recaptcha-container"></div>
-          {!user && (
-            <div className="phone__content">
-              {!showOTP ? (
-                <Card maxW="md" className="card-otp">
-                  <CardBody>
-                    <h2>Sign in as local user</h2>
-
-                    {/* <div className="icons">
+      <div className="phone">
+        <div id="recaptcha-container" className="recaptcha-container"></div>
+        {!user && (
+          <div className="phone__content">
+            {!showOTP ? (
+              <Card maxW="md" className="card-otp card__bg">
+                <CardBody>
+                  <h3>
+                    <b> Welcome</b> <br /> Sign In with phone Number
+                  </h3>
+                  <div className="icons">
                     <i>
                       <BsTelephoneFill size={30} />
                     </i>
-                  </div> */}
-                    <p>Enter Your Phone Number Here</p>
-                    <div className="phone__input">
-                      <PhoneInput
-                        country="gb"
-                        enableAreaCodes={true}
-                        onlyCountries={["gb"]}
-                        preserveOrder={["onlyCountries", "preferredCountries"]}
-                        value={phoneNumber}
-                        onChange={setPhoneNumber}
-                      />
+                  </div>
+                  <p>Enter Your Phone Number Here</p>
+                  {/* 7774614335 */}
+                  <div className="phone__input">
+                    <PhoneInput
+                      country="ng"
+                      enableAreaCodes={true}
+                      onlyCountries={["ng"]}
+                      preserveOrder={["onlyCountries", "preferredCountries"]}
+                      value={phoneNumber}
+                      onChange={setPhoneNumber}
+                    />
+                  </div>
+                  <div className="button">
+                    <Stack
+                      align="center"
+                      padding={"20px 0px"}
+                      display={"flex"}
+                      justifyContent={"center"}
+                    >
+                      {loading ? (
+                        <Button
+                          isLoading
+                          loadingText=" Sending Code Via SMS"
+                          colorScheme="teal"
+                          variant="outline"
+                          spinnerPlacement="start"
+                        >
+                          Sending Code Via SMS
+                        </Button>
+                      ) : (
+                        <Button
+                          onClick={onSignup}
+                          colorScheme="teal"
+                          variant="outline"
+                        >
+                          <span>Send code via SMS</span>
+                        </Button>
+                      )}
+                    </Stack>
+                  </div>
+                </CardBody>
+              </Card>
+            ) : (
+              <div className="phone__otp">
+                <Card maxW="md" className="card-otp card__bg">
+                  <CardBody>
+                    <h3>welcome back</h3>
+                    <div className="icons">
+                      <i>
+                        <BsFillShieldLockFill size={30} />
+                      </i>
+                    </div>
+                    <div className="label">Enter Your OTP</div>
+                    <div className="otp">
+                      <OtpInput
+                        OTPLength={6}
+                        otpType="number"
+                        value={otp}
+                        onChange={setOtp}
+                        disabled={false}
+                        autofocus
+                        className="otp-container"
+                      ></OtpInput>
                     </div>
                     <div className="button">
                       <Stack
@@ -118,84 +167,31 @@ const PhoneAuth = () => {
                         {loading ? (
                           <Button
                             isLoading
-                            loadingText=" Sending Code Via SMS"
+                            loadingText="Verifying OTP..."
                             colorScheme="teal"
                             variant="outline"
                             spinnerPlacement="start"
                           >
-                            Sending Code Via SMS
+                            Verifying OTP
                           </Button>
                         ) : (
                           <Button
-                            onClick={onSignup}
+                            onClick={onOTPVerify}
                             colorScheme="teal"
                             variant="outline"
                           >
-                            <span>Recieve OTP via SMS</span>
+                            <span>Verify OTP</span>
                           </Button>
                         )}
                       </Stack>
                     </div>
                   </CardBody>
                 </Card>
-              ) : (
-                <div className="phone__otp">
-                  <Card maxW="md" className="card-otp card__bg">
-                    <CardBody>
-                      <h3>welcome back</h3>
-                      <div className="icons">
-                        <i>
-                          <BsFillShieldLockFill size={30} />
-                        </i>
-                      </div>
-                      <div className="label">Enter Your OTP</div>
-                      <div className="otp">
-                        <OtpInput
-                          OTPLength={6}
-                          otpType="number"
-                          value={otp}
-                          onChange={setOtp}
-                          disabled={false}
-                          autofocus
-                          className="otp-container"
-                        ></OtpInput>
-                      </div>
-                      <div className="button">
-                        <Stack
-                          align="center"
-                          padding={"20px 0px"}
-                          display={"flex"}
-                          justifyContent={"center"}
-                        >
-                          {loading ? (
-                            <Button
-                              isLoading
-                              loadingText="Verifying OTP..."
-                              colorScheme="teal"
-                              variant="outline"
-                              spinnerPlacement="start"
-                            >
-                              Verifying OTP
-                            </Button>
-                          ) : (
-                            <Button
-                              onClick={onOTPVerify}
-                              colorScheme="teal"
-                              variant="outline"
-                            >
-                              <span>Verify OTP</span>
-                            </Button>
-                          )}
-                        </Stack>
-                      </div>
-                    </CardBody>
-                  </Card>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      )}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
     </React.Fragment>
   );
 };

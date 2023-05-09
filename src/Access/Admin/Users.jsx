@@ -10,19 +10,32 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { db } from "../../Firebase/firebaseConfig";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Users = () => {
   const [data, setData] = useState([]);
   const collectionRef = collection(db, "users");
+  const navigate = useNavigate();
 
   const getData = async () => {
     const data = await getDocs(collectionRef);
     setData(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
-
+  const deleteUser = async (id) => {
+    try {
+      await deleteDoc(doc(db, "users", id));
+      const filteed = data.filter((item) => item.id !== id);
+      setData(filteed);
+      toast.success("One User deleted");
+      navigate("/admin");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   useEffect(() => {
     getData();
   }, []);
@@ -37,6 +50,7 @@ const Users = () => {
               <Tr>
                 <Th>Email</Th>
                 <Th>Fullname</Th>
+                <Th>Country</Th>
                 <Th>Phone Number</Th>
                 <Th>Action</Th>
               </Tr>
@@ -47,14 +61,16 @@ const Users = () => {
                   <Tr key={data.id}>
                     <Td>{data.email}</Td>
                     <Td>{data.fullname}</Td>
+                    <Td>{data.country}</Td>
                     <Td>{data.phoneNumber}</Td>
                     <Td>
                       <Box sx={{ columnGap: "10px", display: "flex" }}>
-                        <Button variant={"outline"} colorScheme="twitter">
-                          Add Admin
-                        </Button>
-                        <Button variant={"outline"} colorScheme="red">
-                          Delete User
+                        <Button
+                          variant={"solid"}
+                          colorScheme="red"
+                          onClick={() => deleteUser(data.id)}
+                        >
+                          Remove User
                         </Button>
                       </Box>
                     </Td>

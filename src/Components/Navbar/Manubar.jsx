@@ -57,7 +57,7 @@ const Manubar = () => {
             variant={"outline"}
             onClick={() => navigate("/login")}
           >
-            Login
+            Login/Register
           </Button>
         </>
       )}
