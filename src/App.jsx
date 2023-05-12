@@ -13,6 +13,7 @@ import Gallery from "./Access/gallery/Gallery";
 import Fixtures from "./Access/Fixtures/Fixtures";
 import Video from "./Access/video/Video";
 import Admin from "./Access/Admin/Admin";
+import ForgetPassword from "./Auth/ForgetPassword";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/features" element={<Features />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/*" element={<ProtectedRoute />}>
           <Route path="/*/gallery" element={<Gallery />} />
           <Route path="/*/videos" element={<Video />} />

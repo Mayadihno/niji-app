@@ -3,6 +3,7 @@ import PhoneAuth from "../Auth/PhoneAuth";
 import { SignIn } from "../Auth/SignIn";
 import "./Login.css";
 import SignUp from "../Auth/SignUp";
+
 const Login = () => {
   const [show, setShow] = useState(true);
   return (

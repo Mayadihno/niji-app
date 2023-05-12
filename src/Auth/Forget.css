@@ -1,0 +1,54 @@
+.forget__pass{
+    margin-top: 40px;
+}
+.forget__content{
+    width: 60%;
+    margin: auto;
+}
+.forget__form{
+    background-color: black;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+.forget__form h3{
+    padding: 10px 0px;
+}
+.forget__form .alternative{
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    justify-content: space-between;
+}
+.forget__form button{
+   margin-top: 20px;
+   padding: 10px 30px;
+}
+.forget__form form{
+   width: 500px;
+  margin: auto;
+}
+@media screen and (max-width:760px) {
+    .forget__content{
+        width: 100%;
+    }
+    .forget__form{
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+}
+    .forget__form form{
+        width: 300px;
+    }
+    .forget__form .alternative p{
+        font-size: 10px;
+        padding-top: 10px;
+    }
+}
