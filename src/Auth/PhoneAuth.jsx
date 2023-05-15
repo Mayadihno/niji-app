@@ -86,7 +86,7 @@ const PhoneAuth = () => {
             {!showOTP ? (
               <Card maxW="md" className="card-otp card__bg">
                 <CardBody>
-                  <h3>Sign In with phone Number</h3>
+                  <h3>Sign In here as local user (Phone Number only)</h3>
                   <div className="icons">
                     <i>
                       <FcSmartphoneTablet size={30} />

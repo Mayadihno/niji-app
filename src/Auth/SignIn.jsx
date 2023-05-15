@@ -49,6 +49,7 @@ export const SignIn = ({ show, setShow }) => {
             </div>
             <div className="signIn__text">
               <h2 style={{ textAlign: "center" }}>Welcome</h2>
+              <span>International Users Only</span>
               <p>Sign in with Email and Password</p>
             </div>
             <form onSubmit={handleSubmit}>
