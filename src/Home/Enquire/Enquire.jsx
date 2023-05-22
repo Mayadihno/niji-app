@@ -17,7 +17,7 @@ const Enquire = () => {
         <div className="enquire__content">
           <div className="enquire__flex">
             <div className="enquire__text">
-              <h3>Tokyo Olympic Organising Committee for the 2023 Games Ltd</h3>
+              <h3>Yokyo Olympic Organising Committee for the 2023 Games Ltd</h3>
               <p>
                 Emma Cray, Matthew Hammond and Jen Whatcott of PwC were
                 appointed as joint liquidators of Birmingham Organising
@@ -41,7 +41,7 @@ const Enquire = () => {
                       <Tbody>
                         <Tr>
                           <Td>12 FEBRUARY - 28 FEBRUARY</Td>
-                          <Td>Tokyo Japan</Td>
+                          <Td>Yokyo</Td>
                           <Td>2566</Td>
                           <Td>82</Td>
                           <Td>66</Td>
@@ -55,8 +55,7 @@ const Enquire = () => {
               <p>
                 If you have any queries regarding the Companies, please contact
                 Zahra Abdul-Hussain at PricewaterhouseCoopers LLP, One
-                Chamberlain Square, Birmingham, B3 3AX or alternatively via
-                email: uk_commonwealth_mvl@pwc.com.
+                Chamberlain Square, Birmingham, B3 3AX.
               </p>
             </div>
           </div>

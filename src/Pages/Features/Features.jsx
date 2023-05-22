@@ -20,7 +20,7 @@ const Features = () => {
         <div className="back__text">
           <div className="date">May 12th-May 25th 2023</div>
           <h3>
-            Tokyo <br /> Olympic 2023
+            Yokyo <br /> Olympic 2023
           </h3>
         </div>
         <div className="features__content">
